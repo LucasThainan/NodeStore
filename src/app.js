@@ -3,11 +3,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const config = require('./config');
 
 const app = express();
 
 //conecta ao banco
-mongoose.connect('mongodb+srv://Luqtes:dGEUH6SHlsNO9BRH@nodestore.qest8.mongodb.net/NodeStore?retryWrites=true&w=majority');
+mongoose.connect(config.connectionString);
 
 //carrega os models
 const Product = require('./models/product');
@@ -18,6 +19,7 @@ const Order = require('./models/order');
 const indexRoute = require('./routes/index-route');
 const productRoute = require('./routes/product-route');
 const customerRoute = require('./routes/customer-route');
+const orderRoute = require('./routes/order-route');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -25,5 +27,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use('/', indexRoute);
 app.use('/products', productRoute);
 app.use('/customers', customerRoute);
+app.use('/orders', orderRoute);
 
 module.exports = app;

@@ -53,7 +53,7 @@ exports.post = async(req, res, next) => {
 
     try{
         await repository.create(req.body);
-        res.status(201).send({ message: 'Produto cadastrado com sucesso!' });
+        res.status(201).send({ message: 'Produto cadastrado com sucesso' });
     }catch(e){
         res.status(500).send({ message: 'Falha ao processar requisição' });
     }
@@ -62,7 +62,7 @@ exports.post = async(req, res, next) => {
 exports.put = async(req, res, next) => {
     try{
         await repository.update(req.params.id, req.body);
-        res.status(200).send({ message: 'Produto atualizado com sucesso!' });
+        res.status(200).send({ message: 'Produto atualizado com sucesso' });
     }catch(e){
         res.status(500).send({ message: 'Falha ao processar requisição' });
     }
@@ -71,7 +71,7 @@ exports.put = async(req, res, next) => {
 exports.delete = async(req, res, next) => {
     try{
         await repository.delete(req.body.id);
-        res.status(200).send({ message: 'Produto removido com sucesso!' });
+        res.status(200).send({ message: 'Produto removido com sucesso' });
     }catch(e){
         res.status(500).send({ message: 'Falha ao processar requisição' });
     }
