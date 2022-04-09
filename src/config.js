@@ -1,4 +1,4 @@
-global.SALT_KEY = 'C0CA96F45F103A06D9F1936241E13C8E008B95B3EAEDC9C0C00E3E3817F2CD38';
+global.SALT_KEY = '7756fc788d1e513bc6ba43020521dcdc7807e76c78f7716cfd2ca3ebe732253b';
 global.EMAIL_TMPL = 'olá, <strong>{0}</strong>, seja bem vindo à Node Store"';
 
 module.exports = {
